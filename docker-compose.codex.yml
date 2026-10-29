@@ -1,7 +1,7 @@
 
 services:
   codex:
-    image: ezenki/codex-dev:latest
+    image: ezenki/codex-container:latest
     init: true
     working_dir: /workspace
 
