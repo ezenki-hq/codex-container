@@ -68,6 +68,12 @@ RUN install -m 0755 -d /etc/apt/keyrings \
 # Python tooling
 RUN pip install --no-cache-dir uv
 
+# Install jCodeMunch globally
+RUN UV_TOOL_DIR=/opt/uv-tools \
+    UV_TOOL_BIN_DIR=/usr/local/bin \
+    uv tool install jcodemunch-mcp \
+    && jcodemunch-mcp --help > /dev/null
+
 # Codex CLI
 RUN npm install -g "@openai/codex@${CODEX_VERSION}"
 
