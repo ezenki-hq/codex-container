@@ -35,8 +35,6 @@ services:
   # Optional Docker daemon for integration tests
   dind:
     image: docker:28-dind
-    profiles:
-      - docker
 
     privileged: true
 
